@@ -1,4 +1,4 @@
-name: Docker Image CI - Publish
+name: Docker Publish
 
 on:
   workflow_dispatch:
@@ -16,6 +16,6 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASS
     - name: Build Docker Image
-        run: docker build . --file Dockerfile --tag ankurpatel82/monarch-money-mcp:latestx
+        run: docker build . --file Dockerfile --tag ankurpatel82/monarch-money-mcp:latest
     - name: Docker Push
         run: docker push ankurpatel82/monarch-money-mcp
